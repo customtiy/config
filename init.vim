@@ -15,6 +15,8 @@ call plug#begin('~/.vim/plugged')
     Plug 'preservim/nerdcommenter'
     Plug 'sheerun/vim-polyglot'
     Plug 'jiangmiao/auto-pairs'
+    Plug 'ludovicchabant/vim-gutentags'
+    Plug 'mhinz/vim-startify'
 
 call plug#end()
 
@@ -99,6 +101,13 @@ let g:syntastic_go_checkers = ["govet", "errcheck"]
 let g:go_fmt_command = "goimports"
 let g:go_fmt_autosave = 0
 let g:go_imports_autosave = 0
+
+" quickfix
+noremap <silent> [q :cprev<CR>
+noremap <silent> ]q :cnext<CR>
+" location list
+noremap <silent> [l :lprev<CR>
+noremap <silent> ]l :lnext<CR>
 
 " -----------------------coc----------------------------------
 " Use tab for trigger completion with characters ahead and navigate.
@@ -235,6 +244,7 @@ nmap <Leader>l :BLines<CR>
 nmap <Leader>L :Lines<CR>
 nmap <Leader>b :Buffers<CR>
 nmap <Leader>h :History<CR>
+nmap <Leader>H :History:<CR>
 
 nmap <Leader>g [fzf-p]
 xmap <Leader>g [fzf-p]
